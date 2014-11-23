@@ -7,6 +7,7 @@
 #define FILE2	"file2"
 #define PAGEINBLOCK 4
 
+int reads, writes, erases;
 main()
 {
 int error;
@@ -40,25 +41,46 @@ int filesize = 2*PF_MAX_BUFS;
 	}
 	printf("file2 created\n");
 
+	
 	/* write to file1 */
 	writefile(FILE1,stale_file1);
 
 	/* print it out */
 	readfile(FILE1,stale_file1);
 
+	//Sequential or Random Writes
+	int random = 1;
+	reads = 0;
+	writes = 0;
+	erases = 0;
+	for(i=0; i<20; i++)
+	{
+		int j = rand() % 40;
+		if(random==0) updatefile(FILE1,stale_file1,i);
+		else updatefile(FILE1,stale_file1,i);
+	}
+	printf("reads - %d", reads);
+	printf("erases - %d", erases);
+	printf("writes - %d\n", writes);
+	garbagecollect(FILE1,stale_file1);
+	printf("reads - %d", reads);
+	printf("erases - %d", erases);
+	printf("writes - %d\n", writes);
+	
+	readfile(FILE1, stale_file1);
+	
+	
 	/* write to file2 */
-	writefile(FILE2,stale_file2);
+	//writefile(FILE2,stale_file2);
 
 	/* print it out */
-	readfile(FILE2,stale_file2);
+	//readfile(FILE2,stale_file2);
 	
-	updatefile(FILE1,stale_file1,1);
+	//readfile(FILE1,stale_file1);
 	
-	readfile(FILE1,stale_file1);
+	//garbagecollect(FILE1,stale_file1);
 	
-	garbagecollect(FILE1,stale_file1);
-	
-	readfile(FILE1,stale_file1);
+	//readfile(FILE1,stale_file1);
 }
 
 
@@ -109,15 +131,18 @@ NumPages = 0;
 						PF_PrintError("Check the Error\n");
 						exit(1);
 					}
+					erases++;
 				}
 				else {
 					if((error=PF_GetThisPage(fd,pagenum,&buf))== PFE_OK){
+						reads++;
 						printf("Got the page to be moved\n");
 						if ((error=PF_AllocPage(fd,&pagenum2,&buf2))!= PFE_OK){
 							PF_PrintError("first buffer alloc\n");
 							exit(1);
 						}
 						*((int *)buf2) = (*buf);
+						writes++;
 						printf("Wrote pagenum - %d into pageNo - %d\n",pagenum,pagenum2);
 						printf("Unfixing both the pages\n");
 						if ((error=PF_UnfixPage(fd,pagenum2,TRUE))!= PFE_OK){
@@ -133,6 +158,7 @@ NumPages = 0;
 							PF_PrintError("Check the Error\n");
 							exit(1);
 						}
+						erases++;
 					}
 					else {
 						PF_PrintError("Can't get the page\n");
@@ -171,6 +197,7 @@ int pagenum2;
 		exit(1);
 	}
 	printf("Updating pagenum value - %d\n", pagenum);
+	reads++;
 	if((error=PF_GetThisPage(fd,pagenum,&buf))== PFE_OK)
 	{
 		printf("Changing stale of pagenum \n");
@@ -192,6 +219,7 @@ int pagenum2;
 		exit(1);
 	}
 	*((int *)buf2) = -(*buf);
+	writes++;
 	printf("new allocated page is %d, new value is %d\n",pagenum2,(*buf2));
 	
 	if ((error=PF_UnfixPage(fd,pagenum2,TRUE))!= PFE_OK){

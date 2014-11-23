@@ -1,0 +1,280 @@
+file size - 40file1 created
+file2 created
+opened file1
+allocated page 0
+allocated page 1
+allocated page 2
+allocated page 3
+allocated page 4
+allocated page 5
+allocated page 6
+allocated page 7
+allocated page 8
+allocated page 9
+allocated page 10
+allocated page 11
+allocated page 12
+allocated page 13
+allocated page 14
+allocated page 15
+allocated page 16
+allocated page 17
+allocated page 18
+allocated page 19
+allocated page 20
+allocated page 21
+allocated page 22
+allocated page 23
+allocated page 24
+allocated page 25
+allocated page 26
+allocated page 27
+allocated page 28
+allocated page 29
+allocated page 30
+allocated page 31
+allocated page 32
+allocated page 33
+allocated page 34
+allocated page 35
+allocated page 36
+allocated page 37
+allocated page 38
+allocated page 39
+opening file1
+reading file
+got page 0, 0, 0
+got page 1, 1, 0
+got page 2, 2, 0
+got page 3, 3, 0
+got page 4, 4, 0
+got page 5, 5, 0
+got page 6, 6, 0
+got page 7, 7, 0
+got page 8, 8, 0
+got page 9, 9, 0
+got page 10, 10, 0
+got page 11, 11, 0
+got page 12, 12, 0
+got page 13, 13, 0
+got page 14, 14, 0
+got page 15, 15, 0
+got page 16, 16, 0
+got page 17, 17, 0
+got page 18, 18, 0
+got page 19, 19, 0
+got page 20, 20, 0
+got page 21, 21, 0
+got page 22, 22, 0
+got page 23, 23, 0
+got page 24, 24, 0
+got page 25, 25, 0
+got page 26, 26, 0
+got page 27, 27, 0
+got page 28, 28, 0
+got page 29, 29, 0
+got page 30, 30, 0
+got page 31, 31, 0
+got page 32, 32, 0
+got page 33, 33, 0
+got page 34, 34, 0
+got page 35, 35, 0
+got page 36, 36, 0
+got page 37, 37, 0
+got page 38, 38, 0
+got page 39, 39, 0
+eof reached
+opening file1
+Updating pagenum value - 0
+Changing stale of pagenum 
+got page 0, value is 0, stale value is 1
+Allocating a new free page 
+new allocated page is 40, new value is 0
+opening file1
+Updating pagenum value - 1
+Changing stale of pagenum 
+got page 1, value is 1, stale value is 1
+Allocating a new free page 
+new allocated page is 41, new value is -1
+opening file1
+Updating pagenum value - 2
+Changing stale of pagenum 
+got page 2, value is 2, stale value is 1
+Allocating a new free page 
+new allocated page is 42, new value is -2
+opening file1
+Updating pagenum value - 3
+Changing stale of pagenum 
+got page 3, value is 3, stale value is 1
+Allocating a new free page 
+new allocated page is 43, new value is -3
+opening file1
+Updating pagenum value - 4
+Changing stale of pagenum 
+got page 4, value is 4, stale value is 1
+Allocating a new free page 
+new allocated page is 44, new value is -4
+opening file1
+Updating pagenum value - 5
+Changing stale of pagenum 
+got page 5, value is 5, stale value is 1
+Allocating a new free page 
+new allocated page is 45, new value is -5
+opening file1
+Updating pagenum value - 6
+Changing stale of pagenum 
+got page 6, value is 6, stale value is 1
+Allocating a new free page 
+new allocated page is 46, new value is -6
+opening file1
+Updating pagenum value - 7
+Changing stale of pagenum 
+got page 7, value is 7, stale value is 1
+Allocating a new free page 
+new allocated page is 47, new value is -7
+opening file1
+Updating pagenum value - 8
+Changing stale of pagenum 
+got page 8, value is 8, stale value is 1
+Allocating a new free page 
+new allocated page is 48, new value is -8
+opening file1
+Updating pagenum value - 9
+Changing stale of pagenum 
+got page 9, value is 9, stale value is 1
+Allocating a new free page 
+new allocated page is 49, new value is -9
+opening file1
+Updating pagenum value - 10
+Changing stale of pagenum 
+got page 10, value is 10, stale value is 1
+Allocating a new free page 
+new allocated page is 50, new value is -10
+opening file1
+Updating pagenum value - 11
+Changing stale of pagenum 
+got page 11, value is 11, stale value is 1
+Allocating a new free page 
+new allocated page is 51, new value is -11
+opening file1
+Updating pagenum value - 12
+Changing stale of pagenum 
+got page 12, value is 12, stale value is 1
+Allocating a new free page 
+new allocated page is 52, new value is -12
+opening file1
+Updating pagenum value - 13
+Changing stale of pagenum 
+got page 13, value is 13, stale value is 1
+Allocating a new free page 
+new allocated page is 53, new value is -13
+opening file1
+Updating pagenum value - 14
+Changing stale of pagenum 
+got page 14, value is 14, stale value is 1
+Allocating a new free page 
+new allocated page is 54, new value is -14
+opening file1
+Updating pagenum value - 15
+Changing stale of pagenum 
+got page 15, value is 15, stale value is 1
+Allocating a new free page 
+new allocated page is 55, new value is -15
+opening file1
+Updating pagenum value - 16
+Changing stale of pagenum 
+got page 16, value is 16, stale value is 1
+Allocating a new free page 
+new allocated page is 56, new value is -16
+opening file1
+Updating pagenum value - 17
+Changing stale of pagenum 
+got page 17, value is 17, stale value is 1
+Allocating a new free page 
+new allocated page is 57, new value is -17
+opening file1
+Updating pagenum value - 18
+Changing stale of pagenum 
+got page 18, value is 18, stale value is 1
+Allocating a new free page 
+new allocated page is 58, new value is -18
+opening file1
+Updating pagenum value - 19
+Changing stale of pagenum 
+got page 19, value is 19, stale value is 1
+Allocating a new free page 
+new allocated page is 59, new value is -19
+
+reads - 20erases - 0writes - 20
+opening file1
+Total num pages - 60
+Block number which has to be erased is 0
+Disposing of page - 0
+Disposing of page - 1
+Disposing of page - 2
+Disposing of page - 3
+Block number which has to be erased is 1
+Disposing of page - 4
+Disposing of page - 5
+Disposing of page - 6
+Disposing of page - 7
+Block number which has to be erased is 2
+Disposing of page - 8
+Disposing of page - 9
+Disposing of page - 10
+Disposing of page - 11
+Block number which has to be erased is 3
+Disposing of page - 12
+Disposing of page - 13
+Disposing of page - 14
+Disposing of page - 15
+Block number which has to be erased is 4
+Disposing of page - 16
+Disposing of page - 17
+Disposing of page - 18
+Disposing of page - 19
+
+reads - 20erases - 20writes - 20
+opening file1
+reading file
+got page 20, 20, 0
+got page 21, 21, 0
+got page 22, 22, 0
+got page 23, 23, 0
+got page 24, 24, 0
+got page 25, 25, 0
+got page 26, 26, 0
+got page 27, 27, 0
+got page 28, 28, 0
+got page 29, 29, 0
+got page 30, 30, 0
+got page 31, 31, 0
+got page 32, 32, 0
+got page 33, 33, 0
+got page 34, 34, 0
+got page 35, 35, 0
+got page 36, 36, 0
+got page 37, 37, 0
+got page 38, 38, 0
+got page 39, 39, 0
+got page 40, 0, 0
+got page 41, -1, 0
+got page 42, -2, 0
+got page 43, -3, 0
+got page 44, -4, 0
+got page 45, -5, 0
+got page 46, -6, 0
+got page 47, -7, 0
+got page 48, -8, 0
+got page 49, -9, 0
+got page 50, -10, 0
+got page 51, -11, 0
+got page 52, -12, 0
+got page 53, -13, 0
+got page 54, -14, 0
+got page 55, -15, 0
+got page 56, -16, 0
+got page 57, -17, 0
+got page 58, -18, 0
+got page 59, -19, 0
+eof reached
