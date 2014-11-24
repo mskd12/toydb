@@ -1,0 +1,60 @@
+Without Garbage Collection in between:
+
+output Sequential Updates
+output file size - 2000
+output Number of updates - 500
+output Number of pages in block - 4
+output After garbage collection
+output reads - 500
+output erases - 500
+output writes - 500
+output Before garbage collection2
+output reads - 500
+output erases - 0
+output writes - 500
+output total number of pages - 2500, stale pages is - 500
+output Random Updates
+output file size - 2000
+output Number of updates - 500, 500
+output Number of pages in block - 4
+output After garbage collection2
+output reads - 944
+output erases - 944
+output writes - 944
+output total number of pages - 2000, stale pages is - 0
+
+
+With Garbage Collection in between:
+
+output Sequential Updates
+output file size - 2000
+output Number of updates - 500
+output Number of pages in block - 4
+output After garbage collection
+output reads - 500
+output erases - 500
+output writes - 500
+output Random Updates
+output Before garbage collection1:-
+output reads - 250
+output erases - 0
+output writes - 250
+output total number of pages - 2250, stale pages is - 250
+output After garbage collection1:-
+output reads - 476
+output erases - 476
+output writes - 476
+output total number of pages - 2000, stale pages is - 0
+output Before garbage collection2
+output reads - 726
+output erases - 476
+output writes - 726
+output total number of pages - 2250, stale pages is - 250
+output file size - 2000
+output Number of updates - 500, 500
+output Number of pages in block - 4
+output After garbage collection2
+output reads - 944
+output erases - 944
+output writes - 944
+output total number of pages - 2000, stale pages is - 0
