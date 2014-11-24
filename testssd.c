@@ -10,17 +10,32 @@
 
 int reads, writes, erases;
 int filesize, numtotal,numstale;
-main()
+main(int argc, char *argv[])
 {
 int error;
 int i,fd;
 int pagenum,*buf;
 int *buf1,*buf2;
 int fd1,fd2;
-filesize = 100*PF_MAX_BUFS;
-int nowrites = 500;
+int nowrites;
 
 //int stale_file[2][];
+	if( argc == 3 )
+	{
+		printf("output The argument supplied are %s, %s\n", argv[1], argv[2]);
+		//char temp[] = *argv[1];
+		//nowrites = *argv[2];
+		sscanf(argv[1], "%d", &filesize); 
+		sscanf(argv[2], "%d", &nowrites);
+		filesize = filesize*PF_MAX_BUFS; 
+		printf("output final The argument supplied are %d, %d\n", filesize, nowrites);
+	}
+	else
+	{
+		printf("One argument expected.\n");
+		filesize = 2*PF_MAX_BUFS;
+		nowrites = 20;
+	}
 	/* create a few files */
 	if ((error=PF_CreateFile(FILE1))!= PFE_OK){
 		PF_PrintError("file1");
@@ -63,7 +78,7 @@ int nowrites = 500;
 	}
 	pagenum = -1;
 	int temp = 0;
-	printf("\noutput Sequential Updates\n");
+	printf("\noutput final Sequential Updates\n");
 	while (temp<nowrites && (error=PF_GetNextPage(fd,&pagenum,&buf))== PFE_OK)
 	//for(i=0; i<nowrites; i++)
 	{
@@ -83,9 +98,9 @@ int nowrites = 500;
 	printf("output Number of updates - %d\n", nowrites);
 	printf("output Number of pages in block - %d\n", PAGEINBLOCK);
 	printf("output After garbage collection\n");
-	printf("output reads - %d\n", reads);
-	printf("output erases - %d\n", erases);
-	printf("output writes - %d\n", writes);
+	printf("output final reads - %d\n", reads);
+	printf("output final erases(in units of blocks) - %d\n", erases/PAGEINBLOCK);
+	printf("output final writes - %d\n", writes);
 	
 	if ((error=PF_CloseFile(fd))!= PFE_OK){
 		PF_PrintError("close file");
@@ -110,7 +125,7 @@ int nowrites = 500;
 	}
 	pagenum = -1;
 	temp = 0;
-	printf("\noutput Random Updates\n");
+	printf("\noutput final Random Updates\n");
 	while (temp<nowrites && ((error=PF_GetNextPage(fd,&pagenum,&buf))== PFE_OK || error == PFE_EOF) )
 	//for(i=0; i<nowrites; i++)
 	{
@@ -136,14 +151,14 @@ int nowrites = 500;
 		{
 			printf("output Before garbage collection1:-\n");
 			printf("output reads - %d\n", reads);
-			printf("output erases - %d\n", erases);
+			printf("output erases(in units of blocks) - %d\n", erases/PAGEINBLOCK);
 			printf("output writes - %d\n", writes);
 			numpages(FILE2,stale_file2);
 			printf("output total number of pages - %d, stale pages is - %d\n", numtotal,numstale);
 			garbagecollect(FILE2,stale_file2);
 			printf("output After garbage collection1:-\n");
 			printf("output reads - %d\n", reads);
-			printf("output erases - %d\n", erases);
+			printf("output erases(in units of blocks) - %d\n", erases/PAGEINBLOCK);
 			printf("output writes - %d\n", writes);
 			numpages(FILE2,stale_file2);
 			printf("output total number of pages - %d, stale pages is - %d\n", numtotal,numstale);
@@ -155,7 +170,7 @@ int nowrites = 500;
 	}
 	printf("output Before garbage collection2\n");
 	printf("output reads - %d\n", reads);
-	printf("output erases - %d\n", erases);
+	printf("output erases(in units of blocks) - %d\n", erases/PAGEINBLOCK);
 	printf("output writes - %d\n", writes);
 	numpages(FILE2,stale_file2);
 	printf("output total number of pages - %d, stale pages is - %d\n", numtotal,numstale);
@@ -164,9 +179,9 @@ int nowrites = 500;
 	printf("output Number of updates - %d, %d\n", temp, nowrites);
 	printf("output Number of pages in block - %d\n", PAGEINBLOCK);
 	printf("output After garbage collection2\n");
-	printf("output reads - %d\n", reads);
-	printf("output erases - %d\n", erases);
-	printf("output writes - %d\n", writes);
+	printf("output final reads - %d\n", reads);
+	printf("output final erases(in units of blocks) - %d\n", erases/PAGEINBLOCK);
+	printf("output final writes - %d\n", writes);
 	numpages(FILE2,stale_file2);
 	printf("output total number of pages - %d, stale pages is - %d\n", numtotal,numstale);
 		

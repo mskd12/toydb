@@ -8,12 +8,12 @@ output After garbage collection
 output reads - 500
 output erases - 500
 output writes - 500
+output Random Updates
 output Before garbage collection2
 output reads - 500
 output erases - 0
 output writes - 500
 output total number of pages - 2500, stale pages is - 500
-output Random Updates
 output file size - 2000
 output Number of updates - 500, 500
 output Number of pages in block - 4

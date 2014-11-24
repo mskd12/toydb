@@ -1,0 +1,25 @@
+##ssd - 10us per page; raid1 - 50us per page
+
+SSD
+
+Samsung 840 Evo 250 GB
+read speed - 510MB/s
+write speed - 377MB/s
+
+page size - 4KB
+
+page read - 8us
+page write - 11us
+
+RAID1
+
+WD 
+read speed - 201MB/s
+write speed - 180MB/s
+
+page size - 4KB
+
+page read - 20us
+page write - 23us
+
+
